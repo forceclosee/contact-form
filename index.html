@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!-- SEO Meta Tags -->
+  <title>Contact Form | Force Close</title>
+  <meta name="author"
+    content="Force Close">
+  <meta name="description"
+    content="">
+  <meta name="keywords"
+    content="Force Close, ">
+
+  <!-- OG Tags -->
+  <meta property="og:title"
+    content=" | Force Close">
+  <meta property="og:description"
+    content="">
+  <meta property="og:image"
+    content=""> <!-- isi image -->
+  <meta property="og:url"
+    content=""> <!-- isi live site url -->
+  <meta property="og:type"
+    content="website">
+  <meta property="og:site_name"
+    content="Force Close Portfolio">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card"
+    content="summary_large_image">
+  <meta name="twitter:title"
+    content=" | Force Close">
+  <meta name="twitter:description"
+    content="">
+  <meta name="twitter:image"
+    content=""> <!-- isi image -->
+  <meta property="twitter:url"
+    content=""> <!-- isi live site url -->
+
+  <!-- favicon -->
+  <link rel="icon"
+    href="/logo-force-close.svg"
+    type="image/svg+xml"> <!-- isi image -->
+
+  <!-- font -->
+
+
+  <!-- javascript -->
+  <script type="module"
+    src="/src/js/main.js"></script>
+
+</head>
+
+<body>
+  <div class="min-block-svh grid grid-rows-[1fr_auto] bg-primary-green-200">
+    <main>
+      <section>
+        <h1>Contact Us</h1>
+
+        <form action=""
+          autocomplete="on"
+          novalidate>
+
+          <!-- name -->
+          <div>
+            <!-- first name -->
+            <div>
+              <label for="first-name">
+                First Name
+              </label>
+              <input type="text"
+                name="first-name"
+                id="first-name"
+                required
+                data-error-value="Please enter your first name">
+              <span id="error-first-name"></span>
+            </div>
+
+            <!-- last name -->
+            <div>
+              <label for="last-name">
+                Last Name
+              </label>
+              <input type="text"
+                name="last-name"
+                id="last-name"
+                required
+                data-error-value="Please enter your last name">
+              <span id="error-last-name"></span>
+            </div>
+          </div>
+
+          <!-- email -->
+          <div>
+            <label for="email">
+              Email Address
+            </label>
+            <input type="email"
+              name="email"
+              id="email"
+              required
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              data-error-value="Please enter your email address"
+              data-error-type='Please include an "@" in the email address'
+              data-error-pattern="Please include your domain (e.g. gmail.com)">
+            <span id="error-email"></span>
+          </div>
+
+          <!-- query -->
+          <span>
+            Query Type
+          </span>
+          <div>
+            <div>
+              <input type="radio"
+                name="query"
+                id="general-enquiry"
+                required
+                data-error-value="Please select a query type">
+              <label for="general-enquiry">
+                General Enquiry
+              </label>
+            </div>
+            <div>
+              <input type="radio"
+                name="query"
+                id="support-request">
+              <label for="support-request">
+                Support Request
+              </label>
+            </div>
+          </div>
+          <span id="error-query"></span>
+
+
+          <!-- message -->
+          <div>
+            <label for="message">
+              Message
+            </label>
+            <textarea name="message"
+              id="message"
+              required
+              minlength="10"
+              data-error-value="Please enter a message"
+              data-error-short="Message must be at least 10 characters long."></textarea>
+            <span id="error-message"></span>
+          </div>
+
+          <!-- consent -->
+          <div>
+            <input type="checkbox"
+              name="consent"
+              id="consent"
+              required
+              data-error-value="To submit this form, please consent to being contacted">
+            <label for="consent">
+              I consent to being contacted by the team
+            </label>
+            <span id="error-consent"></span>
+          </div>
+
+          <!-- submit button -->
+          <button type="submit">
+            Submit
+          </button>
+        </form>
+        <div aria-hidden="true"
+          class="aria-hidden:hidden">
+          <span>Message Sent!</span>
+          <span>Thanks for completing the form. We'll be in touch soon!</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-2xs text-green-900 text-center">
+      Challenge by <a class="text-green-700 hover:underline"
+        href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a class="text-green-700 hover:underline"
+        href="#">Your Name Here</a>.
+    </footer>
+
+  </div>
+</body>
+
+</html>
