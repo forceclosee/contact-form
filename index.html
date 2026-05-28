@@ -55,39 +55,46 @@
 
 </head>
 
-<body>
-  <div class="min-block-svh grid grid-rows-[1fr_auto] bg-primary-green-200">
+<body class="text-neutral-grey-900">
+  <div class="min-block-svh grid grid-rows-[1fr_auto] gap-8 bg-primary-green-200 px-4 pbs-8 pbe-2">
     <main>
-      <section>
-        <h1>Contact Us</h1>
+      <section class="bg-neutral-white px-6 pbs-8 pbe-6">
+        <h1 class="mbe-11 font-bold text-3xl trim-both-capital">
+          Contact Us
+        </h1>
 
         <form action=""
           autocomplete="on"
-          novalidate>
+          novalidate
+          class="flex flex-col gap-4">
 
           <!-- name -->
-          <div>
+          <div class="flex flex-col gap-4">
             <!-- first name -->
-            <div>
-              <label for="first-name">
+            <div class="flex flex-col gap-4">
+              <label for="first-name"
+                class="trim-both-capital">
                 First Name
               </label>
               <input type="text"
                 name="first-name"
                 id="first-name"
+                class="input"
                 required
                 data-error-value="Please enter your first name">
               <span id="error-first-name"></span>
             </div>
 
             <!-- last name -->
-            <div>
-              <label for="last-name">
+            <div class="flex flex-col gap-4">
+              <label for="last-name"
+                class="trim-both-capital">
                 Last Name
               </label>
               <input type="text"
                 name="last-name"
                 id="last-name"
+                class="input"
                 required
                 data-error-value="Please enter your last name">
               <span id="error-last-name"></span>
@@ -95,13 +102,15 @@
           </div>
 
           <!-- email -->
-          <div>
-            <label for="email">
+          <div class="flex flex-col gap-4">
+            <label for="email"
+              class="trim-both-capital">
               Email Address
             </label>
             <input type="email"
               name="email"
               id="email"
+              class="input"
               required
               pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
               data-error-value="Please enter your email address"
@@ -111,39 +120,46 @@
           </div>
 
           <!-- query -->
-          <span>
-            Query Type
-          </span>
-          <div>
-            <div>
-              <input type="radio"
-                name="query"
-                id="general-enquiry"
-                required
-                data-error-value="Please select a query type">
-              <label for="general-enquiry">
-                General Enquiry
-              </label>
+          <div class="flex flex-col gap-4">
+            <span class="trim-both-lowercase">
+              Query Type
+            </span>
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-row items-center gap-4 radio">
+                <input type="radio"
+                  name="query"
+                  id="general-enquiry"
+                  class="block-5 inline-5 focus-visible:outline-none accent-green-600 cursor-pointer"
+                  required
+                  data-error-value="Please select a query type">
+                <label for="general-enquiry"
+                  class="block-full inline-full flex flex-row items-center cursor-pointer">
+                  General Enquiry
+                </label>
+              </div>
+              <div class="flex flex-row items-center gap-4 radio">
+                <input type="radio"
+                  name="query"
+                  id="support-request"
+                  class="block-5 inline-5 focus-visible:outline-none accent-green-600 cursor-pointer">
+                <label for="support-request"
+                  class="block-full inline-full flex flex-row items-center cursor-pointer">
+                  Support Request
+                </label>
+              </div>
             </div>
-            <div>
-              <input type="radio"
-                name="query"
-                id="support-request">
-              <label for="support-request">
-                Support Request
-              </label>
-            </div>
+            <span id="error-query"></span>
           </div>
-          <span id="error-query"></span>
-
 
           <!-- message -->
-          <div>
-            <label for="message">
+          <div class="flex flex-col gap-4">
+            <label for="message"
+              class="trim-both-lowercase">
               Message
             </label>
             <textarea name="message"
               id="message"
+              class="block-60 input"
               required
               minlength="10"
               data-error-value="Please enter a message"
@@ -152,27 +168,34 @@
           </div>
 
           <!-- consent -->
-          <div>
+          <div class="flex flex-row items-center gap-4">
             <input type="checkbox"
               name="consent"
               id="consent"
+              class="block-5 inline-5 accent-green-600 cursor-pointer"
               required
               data-error-value="To submit this form, please consent to being contacted">
-            <label for="consent">
+            <label for="consent"
+              class="cursor-pointer trim-both-capital">
               I consent to being contacted by the team
             </label>
             <span id="error-consent"></span>
           </div>
 
           <!-- submit button -->
-          <button type="submit">
+          <button type="submit"
+            class="btn-green">
             Submit
           </button>
         </form>
-        <div aria-hidden="true"
-          class="aria-hidden:hidden">
-          <span>Message Sent!</span>
-          <span>Thanks for completing the form. We'll be in touch soon!</span>
+
+        <!-- success alert -->
+        <div aria-hidden="false"
+          class="aria-hidden:hidden block-max inline-fit absolute inset-bs-4 inset-x-4 bg-green-900 mx-auto px-6 pbs-7 pbe-6 rounded-xl text-neutral-white">
+          <h2 class="flex items-center gap-2 mbe-3 font-bold text-lg before:content-[url('./src/assets/icon-success-check.svg')] leading-0">
+            Message Sent!
+          </h2>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
         </div>
       </section>
     </main>
