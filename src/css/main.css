@@ -33,7 +33,8 @@
   }
 
   /* Improve line wrapping */
-  p {
+  p,
+  label {
     text-wrap: pretty;
   }
   h1,
@@ -121,17 +122,42 @@
   }
 
   &:focus-within {
-    @apply border-green-600 ring-1 ring-green-600;
+    @apply border-green-600 ring-1 ring-green-600 ring-inset;
+  }
+
+  /* Validation: Invalid State */
+  &:has(:user-invalid) {
+    @apply bg-red-100 border-primary-red;
+
+    &:hover {
+      @media (hover: hover) {
+        @apply border-primary-red ring-primary-red;
+      }
+    }
+
+    &:focus {
+      @apply border-primary-red ring-primary-red;
+    }
   }
 
   /* Validation: Checked state */
   &:has(:checked) {
     @apply bg-green-50 border-green-600;
+
+    &:hover {
+      @media (hover: hover) {
+        @apply border-green-600 ring-green-600;
+      }
+    }
+
+    &:focus-within {
+      @apply border-green-600 ring-green-600;
+    }
   }
 }
 
 @utility btn-green {
-  @apply block-13 inline-full bg-primary-green-600 rounded-lg font-bold text-white cursor-pointer;
+  @apply block-15 inline-full bg-primary-green-600 rounded-lg font-bold text-white transition-colors duration-300 cursor-pointer;
 
   &:hover {
     @media (hover: hover) {

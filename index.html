@@ -58,7 +58,7 @@
 <body class="text-neutral-grey-900">
   <div class="min-block-svh grid grid-rows-[1fr_auto] gap-8 bg-primary-green-200 px-4 pbs-8 pbe-2">
     <main>
-      <section class="bg-neutral-white px-6 pbs-8 pbe-6">
+      <section class="bg-neutral-white px-6 pbs-8 pbe-6 rounded-xl">
         <h1 class="mbe-11 font-bold text-3xl trim-both-capital">
           Contact Us
         </h1>
@@ -66,10 +66,10 @@
         <form action=""
           autocomplete="on"
           novalidate
-          class="flex flex-col gap-4">
+          class="flex flex-col gap-7">
 
           <!-- name -->
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-7">
             <!-- first name -->
             <div class="flex flex-col gap-4">
               <label for="first-name"
@@ -82,7 +82,9 @@
                 class="input"
                 required
                 data-error-value="Please enter your first name">
-              <span id="error-first-name"></span>
+              <span id="error-first-name"
+                aria-hidden="true"
+                class="aria-hidden:hidden"></span>
             </div>
 
             <!-- last name -->
@@ -97,7 +99,9 @@
                 class="input"
                 required
                 data-error-value="Please enter your last name">
-              <span id="error-last-name"></span>
+              <span id="error-last-name"
+                aria-hidden="true"
+                class="aria-hidden:hidden"></span>
             </div>
           </div>
 
@@ -116,7 +120,9 @@
               data-error-value="Please enter your email address"
               data-error-type='Please include an "@" in the email address'
               data-error-pattern="Please include your domain (e.g. gmail.com)">
-            <span id="error-email"></span>
+            <span id="error-email"
+              aria-hidden="true"
+              class="aria-hidden:hidden"></span>
           </div>
 
           <!-- query -->
@@ -125,7 +131,7 @@
               Query Type
             </span>
             <div class="flex flex-col gap-4">
-              <div class="flex flex-row items-center gap-4 radio">
+              <div class="flex items-center gap-4 radio">
                 <input type="radio"
                   name="query"
                   id="general-enquiry"
@@ -133,64 +139,73 @@
                   required
                   data-error-value="Please select a query type">
                 <label for="general-enquiry"
-                  class="block-full inline-full flex flex-row items-center cursor-pointer">
+                  class="block-full inline-full flex flex-row items-center text-lg cursor-pointer">
                   General Enquiry
                 </label>
               </div>
-              <div class="flex flex-row items-center gap-4 radio">
+              <div class="flex items-center gap-4 radio">
                 <input type="radio"
                   name="query"
                   id="support-request"
                   class="block-5 inline-5 focus-visible:outline-none accent-green-600 cursor-pointer">
                 <label for="support-request"
-                  class="block-full inline-full flex flex-row items-center cursor-pointer">
+                  class="block-full inline-full flex flex-row items-center text-lg cursor-pointer">
                   Support Request
                 </label>
               </div>
             </div>
-            <span id="error-query"></span>
+            <span id="error-query"
+              aria-hidden="true"
+              class="aria-hidden:hidden"></span>
           </div>
 
-          <!-- message -->
-          <div class="flex flex-col gap-4">
-            <label for="message"
-              class="trim-both-lowercase">
-              Message
-            </label>
-            <textarea name="message"
-              id="message"
-              class="block-60 input"
-              required
-              minlength="10"
-              data-error-value="Please enter a message"
-              data-error-short="Message must be at least 10 characters long."></textarea>
-            <span id="error-message"></span>
-          </div>
+          <!-- message, consent, and submit button -->
+          <div class="flex flex-col gap-12">
+            <!-- message -->
+            <div class="flex flex-col gap-4">
+              <label for="message"
+                class="trim-both-lowercase">
+                Message
+              </label>
+              <textarea name="message"
+                id="message"
+                class="block-auto min-block-60 py-6 input"
+                required
+                minlength="10"
+                data-error-value="Please enter a message"
+                data-error-short="Message must be at least 10 characters long."></textarea>
+              <span id="error-message"
+                aria-hidden="true"
+                class="aria-hidden:hidden"></span>
+            </div>
 
-          <!-- consent -->
-          <div class="flex flex-row items-center gap-4">
-            <input type="checkbox"
-              name="consent"
-              id="consent"
-              class="block-5 inline-5 accent-green-600 cursor-pointer"
-              required
-              data-error-value="To submit this form, please consent to being contacted">
-            <label for="consent"
-              class="cursor-pointer trim-both-capital">
-              I consent to being contacted by the team
-            </label>
-            <span id="error-consent"></span>
-          </div>
+            <!-- consent -->
+            <div class="flex items-center gap-5">
+              <input type="checkbox"
+                name="consent"
+                id="consent"
+                class="block-5 inline-5 accent-green-600 cursor-pointer"
+                required
+                data-error-value="To submit this form, please consent to being contacted">
+              <label for="consent"
+                class="cursor-pointer trim-both-capital">
+                I consent to being contacted by the team
+              </label>
+              <span id="error-consent"
+                aria-hidden="true"
+                class="aria-hidden:hidden"></span>
+            </div>
 
-          <!-- submit button -->
-          <button type="submit"
-            class="btn-green">
-            Submit
-          </button>
+            <!-- submit button -->
+            <button type="submit"
+              class="btn-green">
+              Submit
+            </button>
+          </div>
         </form>
 
         <!-- success alert -->
-        <div aria-hidden="false"
+        <div aria-hidden="true"
           class="aria-hidden:hidden block-max inline-fit absolute inset-bs-4 inset-x-4 bg-green-900 mx-auto px-6 pbs-7 pbe-6 rounded-xl text-neutral-white">
           <h2 class="flex items-center gap-2 mbe-3 font-bold text-lg before:content-[url('./src/assets/icon-success-check.svg')] leading-0">
             Message Sent!
