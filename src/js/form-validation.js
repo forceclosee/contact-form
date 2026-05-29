@@ -1,7 +1,7 @@
 const form = document.querySelector(".contact-form");
 const successAlert = document.querySelector(".success-alert");
 
-export function validateInput(inputElement) {
+function validateInput(inputElement) {
   // 2. Cari tempat pesan error secara dinamis
   // Khusus untuk radio button, gunakan 'name' (karena dalam satu grup). Selain itu gunakan 'id'.
   const identifier =

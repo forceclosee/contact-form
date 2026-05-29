@@ -3,4 +3,4 @@ import "@fontsource-variable/karla/wght.css";
 
 import "../css/main.css";
 
-import { validateInput } from "./form-validation.js";
+import "./form-validation.js";
