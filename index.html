@@ -56,9 +56,9 @@
 </head>
 
 <body class="text-neutral-grey-900">
-  <div class="min-block-svh grid grid-rows-[1fr_auto] gap-8 bg-primary-green-200 px-4 pbs-8 pbe-2">
-    <main>
-      <section class="bg-neutral-white px-6 pbs-8 pbe-6 rounded-xl">
+  <div class="min-block-svh grid grid-rows-[1fr_auto] justify-items-center items-center gap-8 bg-primary-green-200 px-4 pbs-8 pbe-2">
+    <main class="inline-full max-inline-[26rem] md:max-inline-[46rem]">
+      <section class="bg-neutral-white px-6 md:px-10 pbs-8 md:pbs-12 pbe-6 md:pbe-10 rounded-xl">
         <h1 class="mbe-11 font-bold text-3xl trim-both-capital">
           Contact Us
         </h1>
@@ -69,9 +69,9 @@
           class="flex flex-col gap-7">
 
           <!-- name -->
-          <div class="flex flex-col gap-7">
+          <div class="flex md:flex-row flex-col gap-x-4 gap-y-7">
             <!-- first name -->
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 grow">
               <label for="first-name"
                 class="trim-both-capital">
                 First Name
@@ -88,7 +88,7 @@
             </div>
 
             <!-- last name -->
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 grow">
               <label for="last-name"
                 class="trim-both-capital">
                 Last Name
@@ -130,7 +130,7 @@
             <span class="trim-both-lowercase">
               Query Type
             </span>
-            <div class="flex flex-col gap-4">
+            <div class="flex md:flex-row flex-col gap-x-4 gap-y-4">
               <div class="flex items-center gap-4 radio">
                 <input type="radio"
                   name="query"
@@ -160,7 +160,7 @@
           </div>
 
           <!-- message, consent, and submit button -->
-          <div class="flex flex-col gap-12">
+          <div class="flex flex-col gap-12 md:gap-11">
             <!-- message -->
             <div class="flex flex-col gap-4">
               <label for="message"
@@ -169,7 +169,7 @@
               </label>
               <textarea name="message"
                 id="message"
-                class="block-auto min-block-60 py-6 input"
+                class="block-auto min-block-60 md:min-block-26 py-6 field-sizing-content input"
                 required
                 minlength="10"
                 data-error-value="Please enter a message"
