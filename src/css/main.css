@@ -170,6 +170,23 @@
   }
 }
 
+/* transition success alert */
+@utility transition-success {
+  @apply transition-all transition-discrete duration-500 ease-out;
+
+  /* hidden state */
+  &[aria-hidden="true"] {
+    @apply hidden opacity-0 -translate-y-[150%];
+  }
+
+  /* element state at the start of transition */
+  @starting-style {
+    &[aria-hidden="false"] {
+      @apply opacity-0 -translate-y-[150%];
+    }
+  }
+}
+
 @utility trim-both-lowercase {
   text-box: trim-both cap text;
 }

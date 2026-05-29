@@ -6,6 +6,10 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <!-- Theme color -->
+  <meta name="theme-color"
+    content="#e0f1e8">
+
   <!-- SEO Meta Tags -->
   <title>Contact Form | Force Close</title>
   <meta name="author"
@@ -38,7 +42,7 @@
     content="">
   <meta name="twitter:image"
     content=""> <!-- isi image -->
-  <meta property="twitter:url"
+  <meta name="twitter:url"
     content=""> <!-- isi live site url -->
 
   <!-- favicon -->
@@ -66,54 +70,59 @@
         <form action=""
           autocomplete="on"
           novalidate
-          class="flex flex-col gap-7">
+          class="flex flex-col gap-7 contact-form">
 
           <!-- name -->
           <div class="flex md:flex-row flex-col gap-x-4 gap-y-7">
             <!-- first name -->
-            <div class="flex flex-col gap-4 grow">
+            <div class="group/first-name flex flex-col gap-4 grow">
               <label for="first-name"
-                class="trim-both-capital">
+                class="after:ms-1 after:text-primary-green-600 after:content-['*'] trim-both-capital">
                 First Name
               </label>
               <input type="text"
                 name="first-name"
                 id="first-name"
+                aria-describedby="error-first-name"
                 class="input"
                 required
                 data-error-value="Please enter your first name">
               <span id="error-first-name"
-                aria-hidden="true"
-                class="aria-hidden:hidden"></span>
+                aria-live="polite"
+                class="hidden group-has-[:user-invalid]/first-name:block text-primary-red">
+              </span>
             </div>
 
             <!-- last name -->
-            <div class="flex flex-col gap-4 grow">
+            <div class="group/last-name flex flex-col gap-4 grow">
               <label for="last-name"
-                class="trim-both-capital">
+                class="after:ms-1 after:text-primary-green-600 after:content-['*'] trim-both-capital">
                 Last Name
               </label>
               <input type="text"
                 name="last-name"
                 id="last-name"
+                aria-describedby="error-last-name"
                 class="input"
                 required
                 data-error-value="Please enter your last name">
               <span id="error-last-name"
-                aria-hidden="true"
-                class="aria-hidden:hidden"></span>
+                aria-live="polite"
+                class="hidden group-has-[:user-invalid]/last-name:block text-primary-red">
+              </span>
             </div>
           </div>
 
           <!-- email -->
-          <div class="flex flex-col gap-4">
+          <div class="group/email flex flex-col gap-4">
             <label for="email"
-              class="trim-both-capital">
+              class="after:ms-1 after:text-primary-green-600 after:content-['*'] trim-both-capital">
               Email Address
             </label>
             <input type="email"
               name="email"
               id="email"
+              aria-describedby="error-email"
               class="input"
               required
               pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
@@ -121,13 +130,14 @@
               data-error-type='Please include an "@" in the email address'
               data-error-pattern="Please include your domain (e.g. gmail.com)">
             <span id="error-email"
-              aria-hidden="true"
-              class="aria-hidden:hidden"></span>
+              aria-live="polite"
+              class="hidden group-has-[:user-invalid]/email:block text-primary-red">
+            </span>
           </div>
 
           <!-- query -->
-          <div class="flex flex-col gap-4">
-            <span class="trim-both-lowercase">
+          <div class="group/query flex flex-col gap-4">
+            <span class="after:ms-1 after:text-primary-green-600 trim-both-lowercase after:content-['*']">
               Query Type
             </span>
             <div class="flex md:flex-row flex-col gap-x-4 gap-y-4">
@@ -135,6 +145,7 @@
                 <input type="radio"
                   name="query"
                   id="general-enquiry"
+                  aria-describedby="error-query"
                   class="block-5 inline-5 focus-visible:outline-none accent-green-600 cursor-pointer"
                   required
                   data-error-value="Please select a query type">
@@ -147,7 +158,9 @@
                 <input type="radio"
                   name="query"
                   id="support-request"
-                  class="block-5 inline-5 focus-visible:outline-none accent-green-600 cursor-pointer">
+                  aria-describedby="error-query"
+                  class="block-5 inline-5 focus-visible:outline-none accent-green-600 cursor-pointer"
+                  data-error-value="Please select a query type">
                 <label for="support-request"
                   class="block-full inline-full flex flex-row items-center text-lg cursor-pointer">
                   Support Request
@@ -155,45 +168,52 @@
               </div>
             </div>
             <span id="error-query"
-              aria-hidden="true"
-              class="aria-hidden:hidden"></span>
+              aria-live="polite"
+              class="hidden group-has-[:user-invalid]/query:block text-primary-red">
+            </span>
           </div>
 
           <!-- message, consent, and submit button -->
           <div class="flex flex-col gap-12 md:gap-11">
             <!-- message -->
-            <div class="flex flex-col gap-4">
+            <div class="group/message flex flex-col gap-4">
               <label for="message"
-                class="trim-both-lowercase">
+                class="after:ms-1 after:text-primary-green-600 trim-both-lowercase after:content-['*']">
                 Message
               </label>
               <textarea name="message"
                 id="message"
+                aria-describedby="error-message"
                 class="block-auto min-block-60 md:min-block-26 py-6 field-sizing-content input"
                 required
                 minlength="10"
                 data-error-value="Please enter a message"
                 data-error-short="Message must be at least 10 characters long."></textarea>
               <span id="error-message"
-                aria-hidden="true"
-                class="aria-hidden:hidden"></span>
+                aria-live="polite"
+                class="hidden group-has-[:user-invalid]/message:block text-primary-red">
+              </span>
             </div>
 
             <!-- consent -->
-            <div class="flex items-center gap-5">
-              <input type="checkbox"
-                name="consent"
-                id="consent"
-                class="block-5 inline-5 accent-green-600 cursor-pointer"
-                required
-                data-error-value="To submit this form, please consent to being contacted">
-              <label for="consent"
-                class="cursor-pointer trim-both-capital">
-                I consent to being contacted by the team
-              </label>
+            <div class="group/consent flex flex-col gap-4">
+              <div class="flex items-center gap-5">
+                <input type="checkbox"
+                  name="consent"
+                  id="consent"
+                  aria-describedby="error-consent"
+                  class="block-5 inline-5 accent-green-600 cursor-pointer"
+                  required
+                  data-error-value="To submit this form, please consent to being contacted">
+                <label for="consent"
+                  class="after:ms-1 after:text-primary-green-600 after:content-['*'] cursor-pointer trim-both-capital">
+                  I consent to being contacted by the team
+                </label>
+              </div>
               <span id="error-consent"
-                aria-hidden="true"
-                class="aria-hidden:hidden"></span>
+                aria-live="polite"
+                class="hidden group-has-[:user-invalid]/consent:block text-primary-red">
+              </span>
             </div>
 
             <!-- submit button -->
@@ -206,7 +226,7 @@
 
         <!-- success alert -->
         <div aria-hidden="true"
-          class="aria-hidden:hidden block-max inline-fit absolute inset-bs-4 inset-x-4 bg-green-900 mx-auto px-6 pbs-7 pbe-6 rounded-xl text-neutral-white">
+          class="block-max inline-fit absolute inset-bs-4 inset-x-4 bg-green-900 mx-auto px-6 pbs-7 pbe-6 rounded-xl text-neutral-white transition-success success-alert">
           <h2 class="flex items-center gap-2 mbe-3 font-bold text-lg before:content-[url('./src/assets/icon-success-check.svg')] leading-0">
             Message Sent!
           </h2>
