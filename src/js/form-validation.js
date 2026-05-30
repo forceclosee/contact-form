@@ -1,3 +1,4 @@
+const formWrapper = document.querySelector(".form-wrapper");
 const form = document.querySelector(".contact-form");
 const successAlert = document.querySelector(".success-alert");
 
@@ -42,7 +43,7 @@ function validateInput(inputElement) {
 // EVENT LISTENERS UMUM UNTUK SEMUA FORM
 // ==========================================
 
-// Validasi saat pengguna mengetik secara live (hanya jika sebelumnya sudah disentuh/blur)
+// Validasi saat pengguna mengetik secara live
 form.addEventListener("input", (e) => {
   if (["INPUT", "TEXTAREA"].includes(e.target.tagName)) {
     validateInput(e.target);
@@ -61,6 +62,12 @@ form.addEventListener("submit", function (e) {
       validateInput(input); // Tampilkan pesan errornya
     });
 
+    // shake animations
+    formWrapper.classList.add("animate-shake");
+    setTimeout(() => {
+      formWrapper.classList.remove("animate-shake");
+    }, 500);
+
     // UX: Auto-focus ke input pertama yang error
     if (errorInputs.length > 0) {
       errorInputs[0].focus();
@@ -71,5 +78,6 @@ form.addEventListener("submit", function (e) {
     setTimeout(() => {
       successAlert.setAttribute("aria-hidden", "true");
     }, 5000);
+    errorElement.textContent = "";
   }
 });

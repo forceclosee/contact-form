@@ -62,7 +62,7 @@
 <body class="text-neutral-grey-900">
   <div class="min-block-svh grid grid-rows-[1fr_auto] justify-items-center items-center gap-8 bg-primary-green-200 px-4 pbs-8 pbe-2">
     <main class="inline-full max-inline-[26rem] md:max-inline-[46rem]">
-      <section class="bg-neutral-white px-6 md:px-10 pbs-8 md:pbs-12 pbe-6 md:pbe-10 rounded-xl">
+      <section class="bg-neutral-white px-6 md:px-10 pbs-8 md:pbs-12 pbe-6 md:pbe-10 rounded-xl form-wrapper">
         <h1 class="mbe-11 font-bold text-3xl trim-both-capital">
           Contact Us
         </h1>
@@ -85,7 +85,10 @@
                 id="first-name"
                 aria-describedby="error-first-name"
                 class="input"
+                placeholder="Enter your first name"
                 required
+                minlength="2"
+                data-error-short="First name must be at least 2 characters long."
                 data-error-value="Please enter your first name">
               <span id="error-first-name"
                 aria-live="polite"
@@ -104,8 +107,11 @@
                 id="last-name"
                 aria-describedby="error-last-name"
                 class="input"
+                placeholder="Enter your last name"
                 required
-                data-error-value="Please enter your last name">
+                minlength="2"
+                data-error-value="Please enter your last name"
+                data-error-short="Last name must be at least 2 characters long.">
               <span id="error-last-name"
                 aria-live="polite"
                 class="hidden group-has-[:user-invalid]/last-name:block text-primary-red">
@@ -124,6 +130,7 @@
               id="email"
               aria-describedby="error-email"
               class="input"
+              placeholder="e.g., yourname@gmail.com"
               required
               pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
               data-error-value="Please enter your email address"
@@ -185,6 +192,8 @@
                 id="message"
                 aria-describedby="error-message"
                 class="block-auto min-block-60 md:min-block-26 py-6 field-sizing-content input"
+                placeholder="Type your message here…
+The field will expand automaticaly as you type"
                 required
                 minlength="10"
                 data-error-value="Please enter a message"
@@ -236,10 +245,20 @@
     </main>
 
     <footer class="text-2xs text-green-900 text-center">
-      Challenge by <a class="text-green-700 hover:underline"
-        href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a class="text-green-700 hover:underline"
-        href="#">Your Name Here</a>.
+      <p>Challenge by
+        <a class="text-green-700 hover:underline"
+          href="https://www.frontendmentor.io?ref=challenge">
+          Frontend Mentor
+        </a>
+        . Coded by
+        <a class="text-green-700 hover:underline"
+          href="https://github.com/forceclosee"
+          target="_blank"
+          rel="noopener noreferrer">
+          Force Close
+        </a>
+        .
+      </p>
     </footer>
 
   </div>
