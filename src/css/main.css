@@ -204,6 +204,13 @@
   }
 }
 
+/* icon success */
+@utility check-icon {
+  &::before {
+    content: url("./src/assets/icon-success-check.svg");
+  }
+}
+
 @utility trim-both-lowercase {
   text-box: trim-both cap text;
 }

@@ -67,12 +67,12 @@
         <form action=""
           autocomplete="on"
           novalidate
-          class="flex flex-col gap-7 contact-form">
+          class="grid gap-7 contact-form">
 
           <!-- name -->
-          <div class="flex md:flex-row flex-col gap-x-4 gap-y-7">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-7">
             <!-- first name -->
-            <div class="group/first-name flex flex-col gap-4 grow">
+            <div class="group/first-name flex flex-col gap-4">
               <label for="first-name"
                 class="after:ms-1 after:text-primary-green-600 after:content-['*'] trim-both-capital">
                 First Name
@@ -94,7 +94,7 @@
             </div>
 
             <!-- last name -->
-            <div class="group/last-name flex flex-col gap-4 grow">
+            <div class="group/last-name flex flex-col gap-4">
               <label for="last-name"
                 class="after:ms-1 after:text-primary-green-600 after:content-['*'] trim-both-capital">
                 Last Name
@@ -144,7 +144,7 @@
             <span class="after:ms-1 after:text-primary-green-600 trim-both-lowercase after:content-['*']">
               Query Type
             </span>
-            <div class="flex md:flex-row flex-col gap-x-4 gap-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="flex items-center gap-4 radio">
                 <input type="radio"
                   name="query"
@@ -233,7 +233,7 @@ The field will expand automaticaly as you type"
         <!-- success alert -->
         <div aria-hidden="true"
           class="block-max inline-fit absolute inset-bs-4 inset-x-4 bg-green-900 mx-auto px-6 pbs-7 pbe-6 rounded-xl text-neutral-white transition-success success-alert">
-          <h2 class="flex items-center gap-2 mbe-3 font-bold text-lg before:content-[url('./src/assets/icon-success-check.svg')] leading-0">
+          <h2 class="flex items-center gap-2 mbe-3 font-bold text-lg leading-0 check-icon">
             Message Sent!
           </h2>
           <p>Thanks for completing the form. We'll be in touch soon!</p>

@@ -34,7 +34,6 @@ function validateInput(inputElement) {
     }
     return false;
   } else {
-    errorElement.textContent = "";
     return true;
   }
 }
@@ -78,6 +77,5 @@ form.addEventListener("submit", function (e) {
     setTimeout(() => {
       successAlert.setAttribute("aria-hidden", "true");
     }, 5000);
-    errorElement.textContent = "";
   }
 });
