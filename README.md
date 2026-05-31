@@ -51,7 +51,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL](https://github.com/forceclosee/contact-form)
-- Live Site URL: [live site URL](https://your-live-site-url.com) <!-- ganti link -->
+- Live Site URL: [https://contact-form-forceclose.vercel.app/](https://your-live-site-url.com)
 
 ## My process
 
