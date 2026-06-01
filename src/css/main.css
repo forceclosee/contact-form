@@ -207,7 +207,7 @@
 /* icon success */
 @utility check-icon {
   &::before {
-    content: url("./src/assets/icon-success-check.svg");
+    content: url("../assets/icon-success-check.svg");
   }
 }
 
