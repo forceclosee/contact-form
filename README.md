@@ -6,6 +6,7 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
+  - [Features](#features)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -33,13 +34,17 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-**Additional features added to this project:**
+### Features
 
 - **Live form validation:** Users receive real-time feedback as they type, utilizing the browser's native Constraint Validation API.
 - **Dynamic error messages:** Custom error messages are displayed depending on the exact type of validation error (e.g., `valueMissing`, `tooShort`, `patternMismatch`).
 - **Auto-focus on error:** The form automatically focuses on the first invalid input upon an unsuccessful submission for better UX and accessibility.
 - **Error shake animation:** A subtle shake animation alerts the user when they try to submit an invalid form.
+- **Auto-dismissing toast:** The success alert automatically disappears after 5 seconds, preventing it from permanently obstructing the screen.
 - **Smooth toast animations:** The success toast enters and exits with smooth transitions utilizing modern CSS (`@starting-style`).
+- **Auto-expanding textarea:** The message field grows automatically as the user types, utilizing the modern CSS `field-sizing: content` property, eliminating the need for complex JavaScript calculations.
+- **Robust Accessibility (a11y):** Error messages are securely linked to their respective inputs using `aria-describedby` and dynamically announced to screen readers using `aria-live="polite"`. The success toast visibility is also properly managed via `aria-hidden`.
+- **Custom Validation UI:** Native browser validation tooltips are suppressed (`novalidate`) in favor of a fully customized, brand-aligned UI while still leveraging the browser's robust native Constraint Validation API under the hood.
 - **Custom input states:** Inputs provide clear visual cues for `:valid` and `:user-invalid` states.
 - **Reduced motion support:** Animations and transitions are completely disabled for users who prefer reduced motion (`prefers-reduced-motion: reduce`).
 - **Modern typography & alignment:** Better text wrapping and precise text alignment utilizing modern CSS (`text-wrap: pretty/balance` and `text-box: trim-both`).
